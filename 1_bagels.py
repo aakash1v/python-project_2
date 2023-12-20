@@ -1,7 +1,7 @@
 import random
 
-Num_digits = 3
-Max_guesses = 10 
+Num_digits = 2
+Max_guesses = 5
 
 def main():
     print("Bangles , a detective logic game.")
@@ -11,7 +11,7 @@ def main():
     print("\tWhen i say:        what it's mean:")
     print("\tPico         One digit is correct but in wrong place")
     print("\tFemi         One digit is correct and in right place")
-    print("\tPico         No digit is correct")
+    print("\tBangles      No digit is correct")
 
     while True: #main game loop.
         secretNum = getSecretNum()
@@ -35,7 +35,7 @@ def main():
                 break #They're correct , so break out of this loop.
             if numGuesses > Max_guesses:
                 print('You ran out of guesses')
-                print('The answer was ().'.format(secretNum))
+                print('The answer was {}.'.format(secretNum))
                 
         #Ask player if they want to play again
         print('Do you want to play again? (yes or no)')
