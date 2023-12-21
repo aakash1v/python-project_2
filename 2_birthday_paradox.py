@@ -9,7 +9,8 @@ def getBirthdays(numberOfBirthdays):
 
         # Get a random day into the year:
         randomNumberOfDays = datetime.timedelta(random.randint(0,364))
-        birthdays = startOfYear + randomNumberOfDays
+        birthday = (startOfYear + randomNumberOfDays)
+        birthdays.append(birthday)
     return birthdays
 
 def getMatch(birthdays):
@@ -55,8 +56,8 @@ for i, birthday in enumerate(birthdays):
         #Display a comma for each birthday after the first birthday.
         print(',',end="")
         monthName = months[birthday.month -1]
-    dateText = '{}{}'.format(monthName,birthday)
-    print(dateText,end= '')
+        dateText = '{}{}'.format(monthName,birthday)
+        print(dateText,end= '')
 
 print()
 print()
@@ -93,7 +94,7 @@ print('100,000 simulation run.')
 #Display simulation results:
 
 probability = round (simMatch/100_000 *100,2)
-print('Out of 100,000 simulations of ',numBDays,'People t, there was a ')
+print('Out of 100,000 simulations of ',numBDays,'People, there was a ')
 print('Matching birthday in that group',simMatch,'times. This means')
 print('that',numBDays,'people have a',probability,'%  chance of ')
 print('having a matching birthday in their group.')
